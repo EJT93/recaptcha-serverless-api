@@ -1,0 +1,15 @@
+{
+  "name": "altcha-captcha-api",
+  "version": "1.0.0",
+  "description": "Altcha CAPTCHA Verification API Lambda Functions",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "crypto": "^1.0.1"
+  },
+  "keywords": ["altcha", "captcha", "lambda", "aws"],
+  "author": "",
+  "license": "MIT"
+}
