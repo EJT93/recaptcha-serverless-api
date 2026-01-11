@@ -139,8 +139,8 @@ resource "aws_api_gateway_method_response" "challenge_200" {
   http_method = aws_api_gateway_method.challenge_post.http_method
   status_code = "200"
 
-  response_headers = {
-    "Access-Control-Allow-Origin" = true
+  response_parameters = {
+    "method.response.header.Access-Control-Allow-Origin" = true
   }
 }
 
@@ -150,8 +150,8 @@ resource "aws_api_gateway_method_response" "verify_200" {
   http_method = aws_api_gateway_method.verify_post.http_method
   status_code = "200"
 
-  response_headers = {
-    "Access-Control-Allow-Origin" = true
+  response_parameters = {
+    "method.response.header.Access-Control-Allow-Origin" = true
   }
 }
 
@@ -162,10 +162,10 @@ resource "aws_api_gateway_method_response" "challenge_options_200" {
   http_method = aws_api_gateway_method.challenge_options.http_method
   status_code = "200"
 
-  response_headers = {
-    "Access-Control-Allow-Headers" = true
-    "Access-Control-Allow-Methods" = true
-    "Access-Control-Allow-Origin"  = true
+  response_parameters = {
+    "method.response.header.Access-Control-Allow-Headers" = true
+    "method.response.header.Access-Control-Allow-Methods" = true
+    "method.response.header.Access-Control-Allow-Origin"  = true
   }
 }
 
@@ -175,10 +175,10 @@ resource "aws_api_gateway_method_response" "verify_options_200" {
   http_method = aws_api_gateway_method.verify_options.http_method
   status_code = "200"
 
-  response_headers = {
-    "Access-Control-Allow-Headers" = true
-    "Access-Control-Allow-Methods" = true
-    "Access-Control-Allow-Origin"  = true
+  response_parameters = {
+    "method.response.header.Access-Control-Allow-Headers" = true
+    "method.response.header.Access-Control-Allow-Methods" = true
+    "method.response.header.Access-Control-Allow-Origin"  = true
   }
 }
 # Integration Responses
@@ -188,10 +188,10 @@ resource "aws_api_gateway_integration_response" "challenge_options_200" {
   http_method = aws_api_gateway_method.challenge_options.http_method
   status_code = aws_api_gateway_method_response.challenge_options_200.status_code
 
-  response_headers = {
-    "Access-Control-Allow-Headers" = "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-App-Id,Origin'"
-    "Access-Control-Allow-Methods" = "'POST,OPTIONS'"
-    "Access-Control-Allow-Origin"  = "'*'"
+  response_parameters = {
+    "method.response.header.Access-Control-Allow-Headers" = "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-App-Id,Origin'"
+    "method.response.header.Access-Control-Allow-Methods" = "'POST,OPTIONS'"
+    "method.response.header.Access-Control-Allow-Origin"  = "'*'"
   }
 }
 
@@ -201,10 +201,10 @@ resource "aws_api_gateway_integration_response" "verify_options_200" {
   http_method = aws_api_gateway_method.verify_options.http_method
   status_code = aws_api_gateway_method_response.verify_options_200.status_code
 
-  response_headers = {
-    "Access-Control-Allow-Headers" = "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-App-Id,Origin,X-Forwarded-For'"
-    "Access-Control-Allow-Methods" = "'POST,OPTIONS'"
-    "Access-Control-Allow-Origin"  = "'*'"
+  response_parameters = {
+    "method.response.header.Access-Control-Allow-Headers" = "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,X-App-Id,Origin,X-Forwarded-For'"
+    "method.response.header.Access-Control-Allow-Methods" = "'POST,OPTIONS'"
+    "method.response.header.Access-Control-Allow-Origin"  = "'*'"
   }
 }
 
